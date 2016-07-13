@@ -1,10 +1,20 @@
+# TKRadarChart
+[![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/ibireme/YYWebImage/master/LICENSE)&nbsp;
+[![CocoaPods](http://img.shields.io/cocoapods/v/TKRadarChart.svg?style=flat)](http://cocoapods.org/?q= TKRadarChart)&nbsp;
+[![CocoaPods](http://img.shields.io/cocoapods/p/YYWebImage.svg?style=flat)](http://cocoapods.org/?q= TKRadarChart)&nbsp;
+[![Support](https://img.shields.io/badge/support-iOS%206%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
+
+
+----
+
 # 中文
 
 TKRadarChart 是一个简单的可定制的雷达图
 
 ### CocoaPods
+
 ```
-  pod 'TKRadarChart',
+  pod 'TKRadarChart'
 ```
 
 ### Base
@@ -69,11 +79,13 @@ TKRadarChart 是一个简单的可定制的雷达图
 
 
 # TKRadarChart
+
 A customizable radar chart 
 
 ### CocoaPods
+
 ```
-  pod 'TKRadarChart',
+  pod 'TKRadarChart'
 ```
 
 ### Base
