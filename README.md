@@ -80,9 +80,9 @@ A customizable radar chart
 
 |Base|Description|Demo|
 |---|---|---|
-|Step|Background polygon laps, minimum value is 1|![image](https://github.com/TBXark/TKRadarChart/blob/master/DemoImage/origin.png?raw=true) ![image](https://github.com/TBXark/TKRadarChart/blob/master/DemoImage/step.png?raw=true)|
-|Row|Polygon number of edges, minimum value is three|![image](https://github.com/TBXark/TKRadarChart/blob/master/DemoImage/origin.png?raw=true) ![image](https://github.com/TBXark/TKRadarChart/blob/master/DemoImage/row.png?raw=true)|
-|Section|At the same time show the number of sets of data|![image](https://github.com/TBXark/TKRadarChart/blob/master/DemoImage/origin.png?raw=true) ![image](https://github.com/TBXark/TKRadarChart/blob/master/DemoImage/section.png?raw=true)|
+|Step|Background polygon laps(min 1)|![image](https://github.com/TBXark/TKRadarChart/blob/master/DemoImage/origin.png?raw=true) ![image](https://github.com/TBXark/TKRadarChart/blob/master/DemoImage/step.png?raw=true)|
+|Row|Polygon number of edges (min 3)|![image](https://github.com/TBXark/TKRadarChart/blob/master/DemoImage/origin.png?raw=true) ![image](https://github.com/TBXark/TKRadarChart/blob/master/DemoImage/row.png?raw=true)|
+|Section|Show the number of sets of data|![image](https://github.com/TBXark/TKRadarChart/blob/master/DemoImage/origin.png?raw=true) ![image](https://github.com/TBXark/TKRadarChart/blob/master/DemoImage/section.png?raw=true)|
 
 
 ### TKRadarChartDataSource
