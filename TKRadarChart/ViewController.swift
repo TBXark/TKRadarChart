@@ -23,15 +23,18 @@ class ViewController: UIViewController, TKRadarChartDataSource, TKRadarChartDele
         view.addSubview(chart)
     }
 
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
     
     func numberOfStepForRadarChart(radarChart: TKRadarChart) -> Int {
         return 5
     }
     func numberOfRowForRadarChart(radarChart: TKRadarChart) -> Int {
-        return 5
+        return 6
     }
     func numberOfSectionForRadarChart(radarChart: TKRadarChart) -> Int {
-        return 1
+        return 2
     }
     
     func titleOfRowForRadarChart(radarChart: TKRadarChart, row: Int) -> String {
@@ -39,7 +42,11 @@ class ViewController: UIViewController, TKRadarChartDataSource, TKRadarChartDele
     }
     
     func valueOfSectionForRadarChart(withRow row: Int, section: Int) -> CGFloat {
-        return CGFloat(max(min(row + 1, 4), 3))
+        if section == 0 {
+            return CGFloat(max(min(row + 1, 4), 3))
+        } else {
+            return 3
+        }
     }
 
     
@@ -65,11 +72,19 @@ class ViewController: UIViewController, TKRadarChartDataSource, TKRadarChartDele
     }
 
     func colorOfSectionFillForRadarChart(radarChart: TKRadarChart, section: Int) -> UIColor {
-        return UIColor(red:1,  green:0.867,  blue:0.012, alpha:0.4)
+        if section == 0 {
+            return UIColor(red:1,  green:0.867,  blue:0.012, alpha:0.4)
+        } else {
+            return UIColor(red:0,  green:0.788,  blue:0.543, alpha:0.4)
+        }
     }
     
     func colorOfSectionBorderForRadarChart(radarChart: TKRadarChart, section: Int) -> UIColor {
-        return UIColor(red:1,  green:0.867,  blue:0.012, alpha:1)
+        if section == 0 {
+            return UIColor(red:1,  green:0.867,  blue:0.012, alpha:1)
+        } else {
+            return UIColor(red:0,  green:0.788,  blue:0.543, alpha:1)
+        }
     }
 
     
