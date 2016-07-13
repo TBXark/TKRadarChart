@@ -1,10 +1,11 @@
 # TKRadarChart
-[![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/ibireme/YYWebImage/master/LICENSE)&nbsp;
-[![CocoaPods](http://img.shields.io/cocoapods/v/TKRadarChart.svg?style=flat)](http://cocoapods.org/?q= TKRadarChart)&nbsp;
-[![CocoaPods](http://img.shields.io/cocoapods/p/YYWebImage.svg?style=flat)](http://cocoapods.org/?q= TKRadarChart)&nbsp;
-[![Support](https://img.shields.io/badge/support-iOS%206%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
+# TKPlaceholderTextView
+[![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/TBXark/TKRadarChart/master/LICENSE)
+[![CocoaPods](http://img.shields.io/cocoapods/v/TKRadarChart.svg?style=flat)](http://cocoapods.org/?q= TKPlaceholderTextView)
+[![CocoaPods](http://img.shields.io/cocoapods/p/TKRadarChart.svg?style=flat)](http://cocoapods.org/?q= TKPlaceholderTextView)
+[![Support](https://img.shields.io/badge/support-iOS%208%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)
 
-
+---
 ----
 
 # 中文
