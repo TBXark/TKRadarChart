@@ -2,6 +2,13 @@
 
 TKRadarChart 是一个简单的可定制的雷达图
 
+### CocoaPods
+```
+  pod 'TKRadarChart',
+```
+
+### Base
+
 |基本概念|描述|演示|
 |---|---|---|
 |Step|背景多边形圈数, 最小值为1|![image](https://github.com/TBXark/TKRadarChart/blob/master/DemoImage/origin.png?raw=true) ![image](https://github.com/TBXark/TKRadarChart/blob/master/DemoImage/step.png?raw=true)|
@@ -64,7 +71,12 @@ TKRadarChart 是一个简单的可定制的雷达图
 # TKRadarChart
 A customizable radar chart 
 
-Origin Chart
+### CocoaPods
+```
+  pod 'TKRadarChart',
+```
+
+### Base
 
 |Base|Description|Demo|
 |---|---|---|
