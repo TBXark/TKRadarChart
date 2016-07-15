@@ -1,5 +1,5 @@
 # TKRadarChart
-# TKPlaceholderTextView
+
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/TBXark/TKRadarChart/master/LICENSE)
 [![CocoaPods](http://img.shields.io/cocoapods/v/TKRadarChart.svg?style=flat)](http://cocoapods.org/?q= TKPlaceholderTextView)
 [![CocoaPods](http://img.shields.io/cocoapods/p/TKRadarChart.svg?style=flat)](http://cocoapods.org/?q= TKPlaceholderTextView)
