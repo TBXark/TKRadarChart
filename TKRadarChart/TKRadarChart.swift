@@ -70,15 +70,15 @@ struct TKRadarChartConfig {
     }
     
     
-    var radius: CGFloat
-    var minValue: CGFloat
-    var maxValue: CGFloat
+    var radius: CGFloat    // 半径
+    var minValue: CGFloat  // 最小值
+    var maxValue: CGFloat  // 最大值
     
-    var showPoint: Bool
-    var showBorder: Bool
-    var fillArea: Bool
-    var clockwise: Bool
-    var autoCenterPoint: Bool
+    var showPoint: Bool  // 显示圆点
+    var showBorder: Bool // 显示边界
+    var fillArea: Bool   // 填充
+    var clockwise: Bool  // 顺时针
+    var autoCenterPoint: Bool // 自动设置中心点位置
 }
 
 
@@ -270,8 +270,12 @@ class TKRadarChart: UIView, TKRadarChartDelegate {
                 borderColor.setStroke()
                 
                 path.lineWidth = 2
-                path.fill()
-                path.stroke()
+                if configuration.showBorder {
+                    path.stroke()
+                }
+                if configuration.fillArea {
+                    path.fill()
+                }
                 
                 // Draw point
                 if configuration.showPoint {
