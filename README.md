@@ -9,7 +9,7 @@
 [![Support](https://img.shields.io/badge/support-iOS%208%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)
 
 
-![](example.gif)
+![](DemoImage/origin.png)
 
 ## Requirements
 
@@ -49,9 +49,9 @@ github "tbxark/TKRadarChart"
 
 |Base|Description|Demo|
 |---|---|---|
-|Step|Background polygon laps(min 1)|![image](https://github.com/TBXark/TKRadarChart/blob/master/DemoImage/origin.png?raw=true) ![image](https://github.com/TBXark/TKRadarChart/blob/master/DemoImage/step.png?raw=true)|
-|Row|Number of edges of polygon (min 3)|![image](https://github.com/TBXark/TKRadarChart/blob/master/DemoImage/origin.png?raw=true) ![image](https://github.com/TBXark/TKRadarChart/blob/master/DemoImage/row.png?raw=true)|
-|Section|At the same time show the number of data|![image](https://github.com/TBXark/TKRadarChart/blob/master/DemoImage/origin.png?raw=true) ![image](https://github.com/TBXark/TKRadarChart/blob/master/DemoImage/section.png?raw=true)|
+|Step|Background polygon laps(min 1)|![image](DemoImage/origin.png) ![image](DemoImage/step.png)|
+|Row|Number of edges of polygon (min 3)|![image](DemoImage/origin.png) ![image](DemoImage/row.png)|
+|Section|At the same time show the number of data|![image](DemoImage/origin.png) ![image](DemoImage/section.png)|
 
 ### TKRadarChartConfig
 
