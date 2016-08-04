@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A9103EA1D538CA40009451B /* TKRadarChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A9103E31D538CA30009451B /* TKRadarChart.framework */; };
+		6A9103EB1D538CA40009451B /* TKRadarChart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6A9103E31D538CA30009451B /* TKRadarChart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6A9103F01D538CB80009451B /* TKRadarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA47F241D35FD4000C5D61F /* TKRadarChart.swift */; };
 		6AA47F131D35FD3100C5D61F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA47F121D35FD3100C5D61F /* AppDelegate.swift */; };
 		6AA47F151D35FD3100C5D61F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA47F141D35FD3100C5D61F /* ViewController.swift */; };
 		6AA47F181D35FD3100C5D61F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA47F161D35FD3100C5D61F /* Main.storyboard */; };
@@ -15,7 +18,34 @@
 		6AA47F251D35FD4000C5D61F /* TKRadarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA47F241D35FD4000C5D61F /* TKRadarChart.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6A9103E81D538CA40009451B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AA47F071D35FD3100C5D61F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A9103E21D538CA30009451B;
+			remoteInfo = "TKRadarChart iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6A9103EF1D538CA40009451B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6A9103EB1D538CA40009451B /* TKRadarChart.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		6A9103E31D538CA30009451B /* TKRadarChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TKRadarChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A9103E51D538CA30009451B /* TKRadarChart iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TKRadarChart iOS.h"; sourceTree = "<group>"; };
+		6A9103E71D538CA40009451B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AA47F0F1D35FD3100C5D61F /* TKRadarChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKRadarChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AA47F121D35FD3100C5D61F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AA47F141D35FD3100C5D61F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,20 +57,38 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6AA47F0C1D35FD3100C5D61F /* Frameworks */ = {
+		6A9103DF1D538CA30009451B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6AA47F0C1D35FD3100C5D61F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A9103EA1D538CA40009451B /* TKRadarChart.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A9103E41D538CA30009451B /* TKRadarChart iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6A9103E51D538CA30009451B /* TKRadarChart iOS.h */,
+				6A9103E71D538CA40009451B /* Info.plist */,
+			);
+			path = "TKRadarChart iOS";
+			sourceTree = "<group>";
+		};
 		6AA47F061D35FD3100C5D61F = {
 			isa = PBXGroup;
 			children = (
 				6AA47F111D35FD3100C5D61F /* TKRadarChart */,
+				6A9103E41D538CA30009451B /* TKRadarChart iOS */,
 				6AA47F101D35FD3100C5D61F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				6AA47F0F1D35FD3100C5D61F /* TKRadarChart.app */,
+				6A9103E31D538CA30009451B /* TKRadarChart.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,7 +118,35 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		6A9103E01D538CA30009451B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		6A9103E21D538CA30009451B /* TKRadarChart iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A9103EC1D538CA40009451B /* Build configuration list for PBXNativeTarget "TKRadarChart iOS" */;
+			buildPhases = (
+				6A9103DE1D538CA30009451B /* Sources */,
+				6A9103DF1D538CA30009451B /* Frameworks */,
+				6A9103E01D538CA30009451B /* Headers */,
+				6A9103E11D538CA30009451B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TKRadarChart iOS";
+			productName = "TKRadarChart iOS";
+			productReference = 6A9103E31D538CA30009451B /* TKRadarChart.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		6AA47F0E1D35FD3100C5D61F /* TKRadarChart */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6AA47F211D35FD3100C5D61F /* Build configuration list for PBXNativeTarget "TKRadarChart" */;
@@ -77,10 +154,12 @@
 				6AA47F0B1D35FD3100C5D61F /* Sources */,
 				6AA47F0C1D35FD3100C5D61F /* Frameworks */,
 				6AA47F0D1D35FD3100C5D61F /* Resources */,
+				6A9103EF1D538CA40009451B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6A9103E91D538CA40009451B /* PBXTargetDependency */,
 			);
 			name = TKRadarChart;
 			productName = TKRadarChart;
@@ -97,6 +176,9 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Tbxark;
 				TargetAttributes = {
+					6A9103E21D538CA30009451B = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					6AA47F0E1D35FD3100C5D61F = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -116,11 +198,19 @@
 			projectRoot = "";
 			targets = (
 				6AA47F0E1D35FD3100C5D61F /* TKRadarChart */,
+				6A9103E21D538CA30009451B /* TKRadarChart iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6A9103E11D538CA30009451B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6AA47F0D1D35FD3100C5D61F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -134,6 +224,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6A9103DE1D538CA30009451B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A9103F01D538CB80009451B /* TKRadarChart.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6AA47F0B1D35FD3100C5D61F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,6 +243,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6A9103E91D538CA40009451B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A9103E21D538CA30009451B /* TKRadarChart iOS */;
+			targetProxy = 6A9103E81D538CA40009451B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6AA47F161D35FD3100C5D61F /* Main.storyboard */ = {
@@ -166,6 +272,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6A9103ED1D538CA40009451B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "TKRadarChart iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "TBXark.TKRadarChart-iOS";
+				PRODUCT_NAME = TKRadarChart;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6A9103EE1D538CA40009451B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "TKRadarChart iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "TBXark.TKRadarChart-iOS";
+				PRODUCT_NAME = TKRadarChart;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		6AA47F1F1D35FD3100C5D61F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -255,7 +401,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = TKRadarChart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TBXark.TKRadarChart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -266,7 +414,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = TKRadarChart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TBXark.TKRadarChart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -276,6 +426,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6A9103EC1D538CA40009451B /* Build configuration list for PBXNativeTarget "TKRadarChart iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A9103ED1D538CA40009451B /* Debug */,
+				6A9103EE1D538CA40009451B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		6AA47F0A1D35FD3100C5D61F /* Build configuration list for PBXProject "TKRadarChart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -292,6 +450,7 @@
 				6AA47F231D35FD3100C5D61F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

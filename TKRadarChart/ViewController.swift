@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, TKRadarChartDataSource, TKRadarChartDelegate {
+class ViewController: UIViewController, TKRadarChartDataSource, TKRadarChartDelegate, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
