@@ -10,47 +10,49 @@ import UIKit
 
 /// You can set data chart by `TKRadarChartDataSource`
 protocol TKRadarChartDataSource: class {
-    func numberOfStepForRadarChart(radarChart: TKRadarChart) -> Int
-    func numberOfRowForRadarChart(radarChart: TKRadarChart) -> Int
-    func numberOfSectionForRadarChart(radarChart: TKRadarChart) -> Int
+    func numberOfStepForRadarChart(_ radarChart: TKRadarChart) -> Int
+    func numberOfRowForRadarChart(_ radarChart: TKRadarChart) -> Int
+    func numberOfSectionForRadarChart(_ radarChart: TKRadarChart) -> Int
     
-    func titleOfRowForRadarChart(radarChart: TKRadarChart, row: Int) -> String
+    func titleOfRowForRadarChart(_ radarChart: TKRadarChart, row: Int) -> String
     func valueOfSectionForRadarChart(withRow row: Int, section: Int) -> CGFloat
 }
 
 /// You can custom chart by `TKRadarChartDelegate`
 protocol TKRadarChartDelegate: class {
     
-    func colorOfTitleForRadarChart(radarChart: TKRadarChart) -> UIColor
-    func colorOfLineForRadarChart(radarChart: TKRadarChart) -> UIColor
-    func colorOfFillStepForRadarChart(radarChart: TKRadarChart, step: Int) -> UIColor
+    func colorOfTitleForRadarChart(_ radarChart: TKRadarChart) -> UIColor
+    func colorOfLineForRadarChart(_ radarChart: TKRadarChart) -> UIColor
+    func colorOfFillStepForRadarChart(_ radarChart: TKRadarChart, step: Int) -> UIColor
    
-    func colorOfSectionFillForRadarChart(radarChart: TKRadarChart, section: Int) -> UIColor
-    func colorOfSectionBorderForRadarChart(radarChart: TKRadarChart, section: Int) -> UIColor
+    func colorOfSectionFillForRadarChart(_ radarChart: TKRadarChart, section: Int) -> UIColor
+    func colorOfSectionBorderForRadarChart(_ radarChart: TKRadarChart, section: Int) -> UIColor
 
+    func fontOfTitleForRadarChart(_ radarChart: TKRadarChart) -> UIFont
 }
 
 
+protocol TKRadarChartDelegateDefault: TKRadarChartDelegate {
+}
 
-extension TKRadarChartDelegate {
-    func fontOfTitleForRadarChart(radarChart: TKRadarChart) -> UIFont {
-        return UIFont.systemFontOfSize(11)
+extension TKRadarChartDelegateDefault {
+    func fontOfTitleForRadarChart(_ radarChart: TKRadarChart) -> UIFont {
+        return UIFont.systemFont(ofSize: 11)
     }
-    func colorOfTitleForRadarChart(radarChart: TKRadarChart) -> UIColor {
-        return UIColor.darkGrayColor()
+    func colorOfTitleForRadarChart(_ radarChart: TKRadarChart) -> UIColor {
+        return UIColor.darkGray
     }
-
-    func colorOfLineForRadarChart(radarChart: TKRadarChart) -> UIColor {
-        return UIColor.lightGrayColor()
+    func colorOfLineForRadarChart(_ radarChart: TKRadarChart) -> UIColor {
+        return UIColor.lightGray
     }
-    func colorOfFillStepForRadarChart(radarChart: TKRadarChart, step: Int) -> UIColor {
-        return UIColor.whiteColor()
+    func colorOfFillStepForRadarChart(_ radarChart: TKRadarChart, step: Int) -> UIColor {
+        return UIColor.white
     }
-    func colorOfSectionFillForRadarChart(radarChart: TKRadarChart, section: Int) -> UIColor {
-        return UIColor.clearColor()
+    func colorOfSectionFillForRadarChart(_ radarChart: TKRadarChart, section: Int) -> UIColor {
+        return UIColor(red:1,  green:0.7,  blue:0.3, alpha:0.5)
     }
-    func colorOfSectionBorderForRadarChart(radarChart: TKRadarChart, section: Int) -> UIColor {
-        return UIColor.grayColor()
+    func colorOfSectionBorderForRadarChart(_ radarChart: TKRadarChart, section: Int) -> UIColor {
+        return UIColor(red:1,  green:0.7,  blue:0.3, alpha:1)
     }
 
 }
@@ -79,11 +81,12 @@ struct TKRadarChartConfig {
     var fillArea: Bool   // 填充
     var clockwise: Bool  // 顺时针
     var autoCenterPoint: Bool // 自动设置中心点位置
+    
 }
 
 
 
-class TKRadarChart: UIView, TKRadarChartDelegate {
+class TKRadarChart: UIView, TKRadarChartDelegateDefault {
     
     var centerPoint: CGPoint
     var configuration: TKRadarChartConfig {
@@ -116,7 +119,7 @@ class TKRadarChart: UIView, TKRadarChartDelegate {
         centerPoint = CGPoint(x: frame.width/2, y: frame.height/2)
         configuration = config
         super.init(frame: frame)
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -124,7 +127,7 @@ class TKRadarChart: UIView, TKRadarChartDelegate {
         configuration = TKRadarChartConfig.defaultConfig()
         super.init(coder: aDecoder)
         centerPoint = CGPoint(x: frame.width/2, y: frame.height/2)
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
     }
     
     
@@ -133,10 +136,10 @@ class TKRadarChart: UIView, TKRadarChartDelegate {
     }
     
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         
         guard let dataSource = dataSource,
-            context = UIGraphicsGetCurrentContext()  else { return }
+            let context = UIGraphicsGetCurrentContext()  else { return }
 
         let delegate =  self.delegate ?? self
         
@@ -161,16 +164,16 @@ class TKRadarChart: UIView, TKRadarChartDelegate {
             let title = dataSource.titleOfRowForRadarChart(self, row: index)
             let pointOnEdge = CGPoint(x: centerPoint.x - radius * sin(i * perAngle),
                                       y: centerPoint.y - radius * cos(i * perAngle))
-            let attributeTextSize = (title as NSString).sizeWithAttributes([NSFontAttributeName: textFont])
+            let attributeTextSize = (title as NSString).size(attributes: [NSFontAttributeName: textFont])
             
             let width = attributeTextSize.width
             let xOffset = pointOnEdge.x >=  centerPoint .x ? width / 2.0 + padding : -width / 2.0 - padding
             let yOffset = pointOnEdge.y >=  centerPoint .y ? height / 2.0 + padding : -height / 2.0 - padding
             var legendCenter = CGPoint(x: pointOnEdge.x + xOffset, y: pointOnEdge.y + yOffset)
             
-            let paragraphStyle = NSParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
-            paragraphStyle.alignment = .Center
-            paragraphStyle.lineBreakMode = .ByClipping
+            let paragraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
+            paragraphStyle.alignment = .center
+            paragraphStyle.lineBreakMode = .byClipping
             let attributes = [NSFontAttributeName: textFont,
                               NSParagraphStyleAttributeName: paragraphStyle,
                               NSForegroundColorAttributeName: titleColor]
@@ -181,12 +184,12 @@ class TKRadarChart: UIView, TKRadarChartDelegate {
                 legendCenter.y = centerPoint.y + (radius + padding + height / 2.0) * CGFloat(index == 0 ? -1 : 1)
             }
             let rect = CGRect(x: legendCenter.x - width / 2.0, y: legendCenter.y - height / 2.0, width: width, height: height)
-            (title as NSString).drawInRect(rect, withAttributes: attributes)
+            (title as NSString).draw(in: rect, withAttributes: attributes)
         }
         
         
         /// Draw the background rectangle
-        CGContextSaveGState(context)
+        context.saveGState()
         lineColor.setStroke()
         for stepTemp in 1...numOfSetp {
             let step = numOfSetp - stepTemp + 1
@@ -200,17 +203,17 @@ class TKRadarChart: UIView, TKRadarChartDelegate {
                 if index == 0 {
                     let x = centerPoint.x
                     let y = centerPoint.y -  innserRadius
-                    path.moveToPoint(CGPoint(x: x, y: y))
+                    path.move(to: CGPoint(x: x, y: y))
                 } else {
                     let x = centerPoint.x - innserRadius * sin(i * perAngle)
                     let y = centerPoint.y - innserRadius * cos(i * perAngle)
-                    path.addLineToPoint(CGPoint(x: x, y: y))
+                    path.addLine(to: CGPoint(x: x, y: y))
                 }
             }
             
             let x = centerPoint.x
             let y = centerPoint.y - innserRadius
-            path.addLineToPoint(CGPoint(x: x, y: y))
+            path.addLine(to: CGPoint(x: x, y: y))
             
             
             fillColor.setFill()
@@ -219,7 +222,7 @@ class TKRadarChart: UIView, TKRadarChartDelegate {
             path.fill()
             path.stroke()
         }
-        CGContextRestoreGState(context)
+        context.restoreGState()
         
         
         /// Draw the background line
@@ -227,10 +230,10 @@ class TKRadarChart: UIView, TKRadarChartDelegate {
         for index in 0..<numOfRow {
             let i = CGFloat(index)
             let path = UIBezierPath()
-            path.moveToPoint(centerPoint)
+            path.move(to: centerPoint)
             let x = centerPoint.x - radius * sin(i * perAngle)
             let y = centerPoint.y - radius * cos(i * perAngle)
-            path.addLineToPoint(CGPoint(x: x, y: y))
+            path.addLine(to: CGPoint(x: x, y: y))
             path.stroke()
         }
         
@@ -252,18 +255,18 @@ class TKRadarChart: UIView, TKRadarChartDelegate {
                     if index == 0 {
                         let x = centerPoint.x
                         let y = centerPoint.y -  innserRadius
-                        path.moveToPoint(CGPoint(x: x, y: y))
+                        path.move(to: CGPoint(x: x, y: y))
                     } else {
                         let x = centerPoint.x - innserRadius * sin(i * perAngle)
                         let y = centerPoint.y - innserRadius * cos(i * perAngle)
-                        path.addLineToPoint(CGPoint(x: x, y: y))
+                        path.addLine(to: CGPoint(x: x, y: y))
                     }
                 }
                 
                 let value = dataSource.valueOfSectionForRadarChart(withRow: 0, section: section)
                 let x = centerPoint.x
                 let y = centerPoint.y - (value - minValue) / (maxValue - minValue) * radius
-                path.addLineToPoint(CGPoint(x: x, y: y))
+                path.addLine(to: CGPoint(x: x, y: y))
                 
                 
                 fillColor.setFill()
@@ -285,7 +288,7 @@ class TKRadarChart: UIView, TKRadarChartDelegate {
                         let xVal = centerPoint.x - (value - minValue) / (maxValue - minValue) * radius * sin(CGFloat(i) * perAngle)
                         let yVal = centerPoint.y - (value - minValue) / (maxValue - minValue) * radius * cos(CGFloat(i) * perAngle)
                         borderColor.setFill()
-                        CGContextFillEllipseInRect(context, CGRectMake(xVal-3, yVal-3, 6, 6))
+                        context.fillEllipse(in: CGRect(x: xVal-3, y: yVal-3, width: 6, height: 6))
                     }
                 }
             }

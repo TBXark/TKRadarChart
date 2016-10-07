@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, TKRadarChartDataSource, TKRadarChartDelegate, UITableViewDelegate {
+class ViewController: UIViewController, TKRadarChartDataSource, TKRadarChartDelegateDefault, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,22 +22,18 @@ class ViewController: UIViewController, TKRadarChartDataSource, TKRadarChartDele
         chart.reloadData()
         view.addSubview(chart)
     }
-
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
     
-    func numberOfStepForRadarChart(radarChart: TKRadarChart) -> Int {
+    func numberOfStepForRadarChart(_ radarChart: TKRadarChart) -> Int {
         return 5
     }
-    func numberOfRowForRadarChart(radarChart: TKRadarChart) -> Int {
+    func numberOfRowForRadarChart(_ radarChart: TKRadarChart) -> Int {
         return 6
     }
-    func numberOfSectionForRadarChart(radarChart: TKRadarChart) -> Int {
+    func numberOfSectionForRadarChart(_ radarChart: TKRadarChart) -> Int {
         return 2
     }
     
-    func titleOfRowForRadarChart(radarChart: TKRadarChart, row: Int) -> String {
+    func titleOfRowForRadarChart(_ radarChart: TKRadarChart, row: Int) -> String {
         return "NO.\(row + 1)"
     }
     
@@ -67,7 +63,7 @@ class ViewController: UIViewController, TKRadarChartDataSource, TKRadarChartDele
         case 4:
             return UIColor(red:0.922,  green:0.976,  blue:0.988, alpha:1)
         default:
-            return UIColor.whiteColor()
+            return UIColor.white
         }
     }
 

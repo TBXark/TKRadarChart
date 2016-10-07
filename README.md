@@ -14,7 +14,8 @@
 ## Requirements
 
 - iOS 8.0+
-- Xcode 7.3
+- Xcode 8.0
+- Swift 3.0
 
 ## Installation
 
@@ -103,6 +104,9 @@ protocol TKRadarChartDelegate: class {
 
 
 ## Release History
+
+* 1.3.0
+  Support swift 3.0
 
 * 1.0.1
   Complete basic functions, add Cocoapod and Carthage support
