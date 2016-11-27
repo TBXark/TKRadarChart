@@ -9,7 +9,7 @@
 [![Support](https://img.shields.io/badge/support-iOS%208%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)
 
 
-![](DemoImage/example.jpg)
+![](DemoImage/example.png)
 
 ## Requirements
 
@@ -105,6 +105,9 @@ protocol TKRadarChartDelegate: class {
 
 ## Release History
 
+* 1.3.1
+    Upgrade framework config
+    
 * 1.3.0
   Support swift 3.0
 
