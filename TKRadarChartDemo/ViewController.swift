@@ -1,15 +1,16 @@
 //
 //  ViewController.swift
-//  TKRadarChart
+//  TKRadarChartDemo
 //
-//  Created by Tbxark on 16/7/13.
-//  Copyright © 2016年 Tbxark. All rights reserved.
+//  Created by Tbxark on 27/11/2016.
+//  Copyright © 2016 Tbxark. All rights reserved.
 //
 
 import UIKit
+import TKRadarChart
 
-class ViewController: UIViewController, TKRadarChartDataSource, TKRadarChartDelegateDefault, UITableViewDelegate {
-
+class ViewController: UIViewController, TKRadarChartDataSource, TKRadarChartDelegate, UITableViewDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,15 +45,15 @@ class ViewController: UIViewController, TKRadarChartDataSource, TKRadarChartDele
             return 3
         }
     }
-
     
     
-
-    func colorOfLineForRadarChart(radarChart: TKRadarChart) -> UIColor {
+    
+    
+    func colorOfLineForRadarChart(_ radarChart: TKRadarChart) -> UIColor {
         return UIColor(red:0.337,  green:0.847,  blue:0.976, alpha:1)
     }
     
-    func colorOfFillStepForRadarChart(radarChart: TKRadarChart, step: Int) -> UIColor {
+    func colorOfFillStepForRadarChart(_ radarChart: TKRadarChart, step: Int) -> UIColor {
         switch step {
         case 1:
             return UIColor(red:0.545,  green:0.906,  blue:0.996, alpha:1)
@@ -66,8 +67,8 @@ class ViewController: UIViewController, TKRadarChartDataSource, TKRadarChartDele
             return UIColor.white
         }
     }
-
-    func colorOfSectionFillForRadarChart(radarChart: TKRadarChart, section: Int) -> UIColor {
+    
+    func colorOfSectionFillForRadarChart(_ radarChart: TKRadarChart, section: Int) -> UIColor {
         if section == 0 {
             return UIColor(red:1,  green:0.867,  blue:0.012, alpha:0.4)
         } else {
@@ -75,18 +76,14 @@ class ViewController: UIViewController, TKRadarChartDataSource, TKRadarChartDele
         }
     }
     
-    func colorOfSectionBorderForRadarChart(radarChart: TKRadarChart, section: Int) -> UIColor {
+    func colorOfSectionBorderForRadarChart(_ radarChart: TKRadarChart, section: Int) -> UIColor {
         if section == 0 {
             return UIColor(red:1,  green:0.867,  blue:0.012, alpha:1)
         } else {
             return UIColor(red:0,  green:0.788,  blue:0.543, alpha:1)
         }
     }
-
     
-
+    
+    
 }
-
-
-
-

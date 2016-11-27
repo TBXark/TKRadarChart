@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0810"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6A9103E21D538CA30009451B"
+               BlueprintIdentifier = "6A3F39B41DEB1E1A0067576C"
                BuildableName = "TKRadarChart.framework"
-               BlueprintName = "TKRadarChart iOS"
+               BlueprintName = "TKRadarChart"
                ReferencedContainer = "container:TKRadarChart.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6A9103E21D538CA30009451B"
+            BlueprintIdentifier = "6A3F39B41DEB1E1A0067576C"
             BuildableName = "TKRadarChart.framework"
-            BlueprintName = "TKRadarChart iOS"
+            BlueprintName = "TKRadarChart"
             ReferencedContainer = "container:TKRadarChart.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6A9103E21D538CA30009451B"
+            BlueprintIdentifier = "6A3F39B41DEB1E1A0067576C"
             BuildableName = "TKRadarChart.framework"
-            BlueprintName = "TKRadarChart iOS"
+            BlueprintName = "TKRadarChart"
             ReferencedContainer = "container:TKRadarChart.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

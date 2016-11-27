@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0810"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6A9103E21D538CA30009451B"
-               BuildableName = "TKRadarChart.framework"
-               BlueprintName = "TKRadarChart iOS"
+               BlueprintIdentifier = "6A415EEF1DEB1DAC001DBF69"
+               BuildableName = "TKRadarChartDemo.app"
+               BlueprintName = "TKRadarChartDemo"
                ReferencedContainer = "container:TKRadarChart.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,6 +29,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "6A415EEF1DEB1DAC001DBF69"
+            BuildableName = "TKRadarChartDemo.app"
+            BlueprintName = "TKRadarChartDemo"
+            ReferencedContainer = "container:TKRadarChart.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -42,15 +51,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6A9103E21D538CA30009451B"
-            BuildableName = "TKRadarChart.framework"
-            BlueprintName = "TKRadarChart iOS"
+            BlueprintIdentifier = "6A415EEF1DEB1DAC001DBF69"
+            BuildableName = "TKRadarChartDemo.app"
+            BlueprintName = "TKRadarChartDemo"
             ReferencedContainer = "container:TKRadarChart.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -60,15 +70,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6A9103E21D538CA30009451B"
-            BuildableName = "TKRadarChart.framework"
-            BlueprintName = "TKRadarChart iOS"
+            BlueprintIdentifier = "6A415EEF1DEB1DAC001DBF69"
+            BuildableName = "TKRadarChartDemo.app"
+            BlueprintName = "TKRadarChartDemo"
             ReferencedContainer = "container:TKRadarChart.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
