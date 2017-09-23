@@ -3,8 +3,8 @@
 
 [![Swift Version][swift-image]][swift-url]
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/TBXark/TKRadarChart/master/LICENSE)
-[![CocoaPods](http://img.shields.io/cocoapods/v/TKRadarChart.svg?style=flat)](http://cocoapods.org/?q= TKRadarChart)
-[![CocoaPods](http://img.shields.io/cocoapods/p/TKRadarChart.svg?style=flat)](http://cocoapods.org/?q= TKRadarChart)
+[![CocoaPods](http://img.shields.io/cocoapods/v/TKRadarChart.svg?style=flat)](http://cocoapods.org/?q=TKRadarChart)
+[![CocoaPods](http://img.shields.io/cocoapods/p/TKRadarChart.svg?style=flat)](http://cocoapods.org/?q=TKRadarChart)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Support](https://img.shields.io/badge/support-iOS%208%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)
 
@@ -14,8 +14,8 @@
 ## Requirements
 
 - iOS 8.0+
-- Xcode 8.0
-- Swift 3.0
+- Xcode 9.0
+- Swift 4.0
 
 ## Installation
 
@@ -105,8 +105,11 @@ protocol TKRadarChartDelegate: class {
 
 ## Release History
 
+* 1.4.0
+  Upgrade to swift 4.0
+
 * 1.3.1
-    Upgrade framework config
+  Upgrade framework config
     
 * 1.3.0
   Support swift 3.0
