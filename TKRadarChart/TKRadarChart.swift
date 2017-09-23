@@ -187,7 +187,7 @@ public class TKRadarChart: UIView, TKRadarChartDelegate {
         let textFont = delegate.fontOfTitleForRadarChart(self)
         let numOfSetp = max(dataSource.numberOfStepForRadarChart(self), 1)
         let numOfSection = dataSource.numberOfSectionForRadarChart(self)
-        let perAngle = CGFloat(M_PI * 2) / CGFloat(numOfRow) * CGFloat(configuration.clockwise ? 1 : -1)
+        let perAngle = CGFloat.pi * 2 / CGFloat(numOfRow) * CGFloat(configuration.clockwise ? 1 : -1)
         let padding = CGFloat(2)
         let height = textFont.lineHeight
         let radius = configuration.radius
