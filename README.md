@@ -105,6 +105,9 @@ protocol TKRadarChartDelegate: class {
 
 ## Release History
 
+* 1.4.1 
+  Fix warnign
+
 * 1.4.0
   Upgrade to swift 4.0
 
