@@ -47,8 +47,6 @@ class ViewController: UIViewController, TKRadarChartDataSource, TKRadarChartDele
     }
     
     
-    
-    
     func colorOfLineForRadarChart(_ radarChart: TKRadarChart) -> UIColor {
         return UIColor(red:0.337,  green:0.847,  blue:0.976, alpha:1)
     }
@@ -82,6 +80,10 @@ class ViewController: UIViewController, TKRadarChartDataSource, TKRadarChartDele
         } else {
             return UIColor(red:0,  green:0.788,  blue:0.543, alpha:1)
         }
+    }
+    
+    func fontOfTitleForRadarChart(_ radarChart: TKRadarChart) -> UIFont {
+        return UIFont.systemFont(ofSize: 10)
     }
     
     

@@ -22,13 +22,15 @@ public protocol TKRadarChartDataSource: class {
 /// You can custom chart by `TKRadarChartDelegate`
 public protocol TKRadarChartDelegate: class {
     
-    func colorOfTitleForRadarChart(_ radarChart: TKRadarChart) -> UIColor
     func colorOfLineForRadarChart(_ radarChart: TKRadarChart) -> UIColor
     func colorOfFillStepForRadarChart(_ radarChart: TKRadarChart, step: Int) -> UIColor
     
     func colorOfSectionFillForRadarChart(_ radarChart: TKRadarChart, section: Int) -> UIColor
     func colorOfSectionBorderForRadarChart(_ radarChart: TKRadarChart, section: Int) -> UIColor
     
+    func fontOfTitleForRadarChart(_ radarChart: TKRadarChart) -> UIFont
+    func colorOfTitleForRadarChart(_ radarChart: TKRadarChart) -> UIColor
+
 }
 
 
