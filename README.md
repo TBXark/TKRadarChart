@@ -104,6 +104,8 @@ protocol TKRadarChartDelegate: class {
 
 
 ## Release History
+* 1.4.2
+  Fix bugs that can not change the title font
 
 * 1.4.1 
   Fix warnign
