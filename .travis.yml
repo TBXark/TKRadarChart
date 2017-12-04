@@ -1,0 +1,5 @@
+language: objective-c
+osx_image: xcode9.1
+xcode_project: TKRadarChart.xcodeproj
+xcode_scheme: TKRadarChart
+xcode_sdk: iphonesimulator11.1
