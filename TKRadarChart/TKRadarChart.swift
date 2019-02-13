@@ -314,7 +314,8 @@ public class TKRadarChart: UIView, TKRadarChartDelegate {
                 let y = centerPoint.y - (value - minValue) / (maxValue - minValue) * radius
                 path.addLine(to: CGPoint(x: x, y: y))
                 
-                
+                path.close()
+
                 fillColor.setFill()
                 borderColor.setStroke()
                 
