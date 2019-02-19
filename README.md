@@ -38,7 +38,7 @@ import TKRadarChart
 #### Carthage
 Create a `Cartfile` that lists the framework and run `carthage update`. Follow the [instructions](https://github.com/Carthage/Carthage#if-youre-building-for-ios) to add `$(SRCROOT)/Carthage/Build/iOS/TKRadarChart.framework` to an iOS project.
 
-```
+```ruby
 github "tbxark/TKRadarChart"
 ```
 #### Manually
@@ -59,7 +59,7 @@ github "tbxark/TKRadarChart"
 
 This structure is used for custom charts
 
-```
+```swift
     var radius: CGFloat    
     var minValue: CGFloat
     var maxValue: CGFloat
@@ -75,7 +75,7 @@ This structure is used for custom charts
 
 This protocol represents the data model object. as such, it supplies no information about appearance
 
-```
+```swift
 protocol TKRadarChartDataSource: class {
     func numberOfStepForRadarChart(radarChart: TKRadarChart) -> Int
     func numberOfRowForRadarChart(radarChart: TKRadarChart) -> Int
@@ -90,7 +90,7 @@ protocol TKRadarChartDataSource: class {
 
 This represents the display and behaviour of the TKRadarChart.
 
-```
+```swift
 protocol TKRadarChartDelegate: class {
 
     func colorOfTitleForRadarChart(radarChart: TKRadarChart) -> UIColor
