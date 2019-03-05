@@ -8,6 +8,10 @@
 
 import UIKit
 
+#if swift( >=4.2)
+typealias UIApplicationLaunchOptionsKey = UIApplication.LaunchOptionsKey
+#endif
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

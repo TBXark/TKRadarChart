@@ -8,6 +8,11 @@
 
 import UIKit
 
+#if swift( >=4.2)
+typealias NSAttributedStringKey = NSAttributedString.Key
+#endif
+
+
 
 /// You can set data chart by `TKRadarChartDataSource`
 public protocol TKRadarChartDataSource: class {
