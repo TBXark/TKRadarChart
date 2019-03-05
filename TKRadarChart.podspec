@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "TKRadarChart"
-  s.version      = "1.4.2"
+  s.version      = "1.4.3"
   s.summary      = "TKRadarChart is a customizable radar chart  "
   s.license      = { :type => 'MIT License', :file => 'LICENSE' }
   s.homepage     = "https://github.com/TBXark/TKRadarChart"

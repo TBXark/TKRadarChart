@@ -105,6 +105,10 @@ protocol TKRadarChartDelegate: class {
 
 
 ## Release History
+
+* 1.4.3 
+  Upgrade to swift 4.2
+
 * 1.4.2
   Fix bugs that can not change the title font
 
