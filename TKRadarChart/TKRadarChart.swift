@@ -205,7 +205,7 @@ public class TKRadarChart: UIView, TKRadarChartDelegate {
             let title = dataSource.titleOfRowForRadarChart(self, row: index)
             let pointOnEdge = CGPoint(x: centerPoint.x - radius * sin(i * perAngle),
                                       y: centerPoint.y - radius * cos(i * perAngle))
-            let attributeTextSize = (title as NSString).size(withAttributes: [NSAttributedStringKey.font: textFont])
+            let attributeTextSize = (title as NSString).size(withAttributes: [NSAttributedString.Key.font: textFont])
             
             let width = attributeTextSize.width
             let xOffset = pointOnEdge.x >=  centerPoint .x ? width / 2.0 + padding : -width / 2.0 - padding
@@ -215,9 +215,9 @@ public class TKRadarChart: UIView, TKRadarChartDelegate {
             let paragraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
             paragraphStyle.alignment = .center
             paragraphStyle.lineBreakMode = .byClipping
-            let attributes = [NSAttributedStringKey.font: textFont,
-                              NSAttributedStringKey.paragraphStyle: paragraphStyle,
-                              NSAttributedStringKey.foregroundColor: titleColor]
+            let attributes = [NSAttributedString.Key.font: textFont,
+                              NSAttributedString.Key.paragraphStyle: paragraphStyle,
+                              NSAttributedString.Key.foregroundColor: titleColor]
             
             /// Fix title offset
             if index == 0 ||  (numOfRow%2 == 0 && index == numOfRow/2){
