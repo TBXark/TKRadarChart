@@ -76,7 +76,9 @@ public struct TKRadarChartConfig {
                                   showBgBorder: true,
                                   fillArea: true,
                                   clockwise: false,
-                                  autoCenterPoint: true)
+                                  autoCenterPoint: true,
+                                  showOuterCircle: false,
+                                  showInnerCircle: true)
     }
     
     
@@ -94,6 +96,8 @@ public struct TKRadarChartConfig {
     public var fillArea: Bool
     public var clockwise: Bool
     public var autoCenterPoint: Bool
+    public var showOuterCircle: Bool
+    public var showInnerCircle: Bool
     
     
     public init(radius: CGFloat,
@@ -107,7 +111,9 @@ public struct TKRadarChartConfig {
                 showBgBorder: Bool,
                 fillArea: Bool,
                 clockwise: Bool,
-                autoCenterPoint: Bool) {
+                autoCenterPoint: Bool,
+                showOuterCircle: Bool,
+                showInnerCircle: Bool) {
         self.radius = radius
         self.minValue = minValue
         self.maxValue = maxValue
@@ -120,6 +126,8 @@ public struct TKRadarChartConfig {
         self.fillArea = fillArea
         self.clockwise = clockwise
         self.autoCenterPoint = autoCenterPoint
+        self.showOuterCircle = showOuterCircle
+        self.showInnerCircle = showInnerCircle
     }
 }
 
@@ -228,45 +236,57 @@ public class TKRadarChart: UIView, TKRadarChartDelegate {
             (title as NSString).draw(in: rect, withAttributes: attributes)
         }
         
-        
+        if configuration.showOuterCircle {
+            context.saveGState()
+            lineColor.setStroke()
+            let cirlePath = UIBezierPath(arcCenter: centerPoint, radius: radius, startAngle: 0, endAngle: CGFloat(2.0 * Double.pi), clockwise: true)
+            cirlePath.lineWidth = configuration.borderWidth
+            if configuration.showBgBorder {
+                cirlePath.stroke()
+            }
+            context.restoreGState()
+        }
+
         /// Draw the background rectangle
-        context.saveGState()
-        lineColor.setStroke()
-        for stepTemp in 1...numOfSetp {
-            let step = numOfSetp - stepTemp + 1
-            let fillColor = delegate.colorOfFillStepForRadarChart(self, step: step)
-            
-            let scale = CGFloat(step)/CGFloat(numOfSetp)
-            let innserRadius = scale * radius
-            let path = UIBezierPath()
-            for index in 0...numOfRow {
-                let i = CGFloat(index)
-                if index == 0 {
-                    let x = centerPoint.x
-                    let y = centerPoint.y -  innserRadius
-                    path.move(to: CGPoint(x: x, y: y))
-                } else if index == numOfRow {
-                    let x = centerPoint.x
-                    let y = centerPoint.y - innserRadius
-                    path.addLine(to: CGPoint(x: x, y: y))
-                }else {
-                    let x = centerPoint.x - innserRadius * sin(i * perAngle)
-                    let y = centerPoint.y - innserRadius * cos(i * perAngle)
-                    path.addLine(to: CGPoint(x: x, y: y))
+        if configuration.showInnerCircle {
+            context.saveGState()
+            lineColor.setStroke()
+
+            for stepTemp in 1...numOfSetp {
+                let step = numOfSetp - stepTemp + 1
+                let fillColor = delegate.colorOfFillStepForRadarChart(self, step: step)
+
+                let scale = CGFloat(step)/CGFloat(numOfSetp)
+                let innserRadius = scale * radius
+                let path = UIBezierPath()
+                for index in 0...numOfRow {
+                    let i = CGFloat(index)
+                    if index == 0 {
+                        let x = centerPoint.x
+                        let y = centerPoint.y -  innserRadius
+                        path.move(to: CGPoint(x: x, y: y))
+                    } else if index == numOfRow {
+                        let x = centerPoint.x
+                        let y = centerPoint.y - innserRadius
+                        path.addLine(to: CGPoint(x: x, y: y))
+                    }else {
+                        let x = centerPoint.x - innserRadius * sin(i * perAngle)
+                        let y = centerPoint.y - innserRadius * cos(i * perAngle)
+                        path.addLine(to: CGPoint(x: x, y: y))
+                    }
+                }
+
+                path.close()
+                fillColor.setFill()
+
+                path.lineWidth = configuration.borderWidth
+                path.fill()
+                if configuration.showBgBorder {
+                    path.stroke()
                 }
             }
-            
-            path.close()
-            fillColor.setFill()
-            
-            path.lineWidth = configuration.borderWidth
-            path.fill()
-            if configuration.showBgBorder {
-                path.stroke()
-            }
+            context.restoreGState()
         }
-        context.restoreGState()
-        
         
         /// Draw the background line
         lineColor.setStroke()
@@ -319,7 +339,7 @@ public class TKRadarChart: UIView, TKRadarChartDelegate {
                 fillColor.setFill()
                 borderColor.setStroke()
                 
-                path.lineWidth = 2
+                path.lineWidth = configuration.borderWidth
                 if configuration.fillArea {
                     path.fill()
                 }
