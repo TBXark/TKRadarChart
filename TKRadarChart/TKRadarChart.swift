@@ -165,7 +165,8 @@ public class TKRadarChart: UIView, TKRadarChartDelegate {
         centerPoint = CGPoint.zero
         configuration = TKRadarChartConfig.defaultConfig()
         super.init(coder: aDecoder)
-        centerPoint = CGPoint(x: frame.width/2, y: frame.height/2)
+        // 解决视图不居中问题
+        centerPoint = CGPoint(x: frame.size.width/2+frame.origin.x, y: frame.size.height/2+frame.origin.y)
         backgroundColor = UIColor.clear
     }
     
@@ -185,6 +186,20 @@ public class TKRadarChart: UIView, TKRadarChartDelegate {
         let numOfRow = dataSource.numberOfRowForRadarChart(self)
         
         guard numOfRow > 0 else { return }
+        // 如果maxValue为默认值则从数据源中找到真正的maxValue
+        if configuration.maxValue == 5 {
+            let numOfSection = dataSource.numberOfSectionForRadarChart(self)
+            var max = configuration.maxValue
+            for section in 0..<numOfSection {
+                for row in 0..<numOfRow {
+                    let value = dataSource.valueOfSectionForRadarChart(withRow: row, section: section)
+                    if value > max {
+                        max = value
+                    }
+                }
+            }
+            configuration.maxValue = max
+        }
         
         let textFont = delegate.fontOfTitleForRadarChart(self)
         let numOfSetp = max(dataSource.numberOfStepForRadarChart(self), 1)
