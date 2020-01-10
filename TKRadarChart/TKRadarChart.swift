@@ -74,7 +74,7 @@ public struct TKRadarChartConfig {
                                   minValue: 0,
                                   maxValue: 5,
                                   borderWidth: 4,
-                                  lindWidth: 1,
+                                  lineWidth: 1,
                                   showPoint: false,
                                   showBorder: false,
                                   showBgLine: true,
@@ -90,7 +90,7 @@ public struct TKRadarChartConfig {
     public var maxValue: CGFloat
     
     public var borderWidth: CGFloat
-    public var lindWidth: CGFloat
+    public var lineWidth: CGFloat
     
     public var showPoint: Bool
     public var showBorder: Bool
@@ -105,7 +105,7 @@ public struct TKRadarChartConfig {
                 minValue: CGFloat,
                 maxValue: CGFloat,
                 borderWidth: CGFloat,
-                lindWidth: CGFloat,
+                lineWidth: CGFloat,
                 showPoint: Bool,
                 showBorder: Bool,
                 showBgLine: Bool,
@@ -117,7 +117,7 @@ public struct TKRadarChartConfig {
         self.minValue = minValue
         self.maxValue = maxValue
         self.borderWidth = borderWidth
-        self.lindWidth = lindWidth
+        self.lineWidth = lineWidth
         self.showPoint = showPoint
         self.showBorder = showBorder
         self.showBgLine = showBgLine
@@ -283,7 +283,7 @@ public class TKRadarChart: UIView, TKRadarChartDelegate {
                 let x = centerPoint.x - radius * sin(i * perAngle)
                 let y = centerPoint.y - radius * cos(i * perAngle)
                 path.addLine(to: CGPoint(x: x, y: y))
-                path.lineWidth = configuration.lindWidth
+                path.lineWidth = configuration.lineWidth
                 path.stroke()
             }
         }
