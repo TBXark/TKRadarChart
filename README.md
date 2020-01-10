@@ -77,11 +77,11 @@ This protocol represents the data model object. as such, it supplies no informat
 
 ```swift
 protocol TKRadarChartDataSource: class {
-    func numberOfStepForRadarChart(radarChart: TKRadarChart) -> Int
-    func numberOfRowForRadarChart(radarChart: TKRadarChart) -> Int
-    func numberOfSectionForRadarChart(radarChart: TKRadarChart) -> Int
+    func numberOfStepForRadarChart(_ radarChart: TKRadarChart) -> Int
+    func numberOfRowForRadarChart(_ radarChart: TKRadarChart) -> Int
+    func numberOfSectionForRadarChart(_ radarChart: TKRadarChart) -> Int
 
-    func titleOfRowForRadarChart(radarChart: TKRadarChart, row: Int) -> String
+    func titleOfRowForRadarChart(_ radarChart: TKRadarChart, row: Int) -> String
     func valueOfSectionForRadarChart(withRow row: Int, section: Int) -> CGFloat
 }
 ```
@@ -92,14 +92,12 @@ This represents the display and behaviour of the TKRadarChart.
 
 ```swift
 protocol TKRadarChartDelegate: class {
+    func colorOfTitleForRadarChart(_ radarChart: TKRadarChart) -> UIColor
+    func colorOfLineForRadarChart(_ radarChart: TKRadarChart) -> UIColor
+    func colorOfFillStepForRadarChart(_ radarChart: TKRadarChart, step: Int) -> UIColor
 
-    func colorOfTitleForRadarChart(radarChart: TKRadarChart) -> UIColor
-    func colorOfLineForRadarChart(radarChart: TKRadarChart) -> UIColor
-    func colorOfFillStepForRadarChart(radarChart: TKRadarChart, step: Int) -> UIColor
-
-    func colorOfSectionFillForRadarChart(radarChart: TKRadarChart, section: Int) -> UIColor
-    func colorOfSectionBorderForRadarChart(radarChart: TKRadarChart, section: Int) -> UIColor
-
+    func colorOfSectionFillForRadarChart(_ radarChart: TKRadarChart, section: Int) -> UIColor
+    func colorOfSectionBorderForRadarChart(_ radarChart: TKRadarChart, section: Int) -> UIColor
 }
 ```
 
