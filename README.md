@@ -14,9 +14,9 @@
 
 ## Requirements
 
-- iOS 8.0+
-- Xcode 9.0
-- Swift 4.0
+- iOS 11.0+
+- Xcode 12.0
+- Swift 5.0
 
 ## Installation
 
@@ -24,7 +24,7 @@
 You can use [CocoaPods](http://cocoapods.org/) to install `TKRadarChart` by adding it to your `Podfile`:
 
 ```ruby
-platform :ios, '8.0'
+platform :ios, '11.0'
 use_frameworks!
 pod 'TKRadarChart'
 ```
@@ -41,6 +41,17 @@ Create a `Cartfile` that lists the framework and run `carthage update`. Follow t
 ```ruby
 github "tbxark/TKRadarChart"
 ```
+
+#### Swift Package Manager
+
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the swift compiler.
+Once you have your Swift package set up, adding TKRadarChart as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/pabloruan0710/TKRadarChart", .upToNextMajor(from: "1.4.3"))
+]
+```
 #### Manually
 1. Download and drop ```TKRadarChart.swift``` in your project.  
 2. Congratulations!  
@@ -51,9 +62,9 @@ github "tbxark/TKRadarChart"
 
 |Base|Description|Demo|
 |---|---|---|
-|Step|Background polygon laps(min 1)|![image](DemoImage/origin.png) ![image](DemoImage/step.png)|
-|Row|Number of edges of polygon (min 3)|![image](DemoImage/origin.png) ![image](DemoImage/row.png)|
-|Section|At the same time show the number of data|![image](DemoImage/origin.png) ![image](DemoImage/section.png)|
+|Step|Background polygon laps(min 1)|![image](Sources/DemoImage/origin.png) ![image](Sources/DemoImage/step.png)|
+|Row|Number of edges of polygon (min 3)|![image](Sources/DemoImage/origin.png) ![image](Sources/DemoImage/row.png)|
+|Section|At the same time show the number of data|![image](Sources/DemoImage/origin.png) ![image](Sources/DemoImage/section.png)|
 
 ### TKRadarChartConfig
 
@@ -103,6 +114,9 @@ protocol TKRadarChartDelegate: class {
 
 
 ## Release History
+* 1.4.4 
+  Upgrade to swift 5.0
+  Support SPM
 
 * 1.4.3 
   Upgrade to swift 4.2

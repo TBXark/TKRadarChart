@@ -12,10 +12,8 @@ import UIKit
 typealias NSAttributedStringKey = NSAttributedString.Key
 #endif
 
-
-
 /// You can set data chart by `TKRadarChartDataSource`
-public protocol TKRadarChartDataSource: class {
+public protocol TKRadarChartDataSource: AnyObject {
     func numberOfStepForRadarChart(_ radarChart: TKRadarChart) -> Int
     func numberOfRowForRadarChart(_ radarChart: TKRadarChart) -> Int
     func numberOfSectionForRadarChart(_ radarChart: TKRadarChart) -> Int
@@ -25,7 +23,7 @@ public protocol TKRadarChartDataSource: class {
 }
 
 /// You can custom chart by `TKRadarChartDelegate`
-public protocol TKRadarChartDelegate: class {
+public protocol TKRadarChartDelegate: AnyObject {
     
     func colorOfLineForRadarChart(_ radarChart: TKRadarChart) -> UIColor
     func colorOfFillStepForRadarChart(_ radarChart: TKRadarChart, step: Int) -> UIColor
